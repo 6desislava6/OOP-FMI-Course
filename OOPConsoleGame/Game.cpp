@@ -83,36 +83,36 @@ void Game::mainMenu()
 
 void Game::gameMenu()
 {
-	/// GameMenu представлява безкраен цикъл на редуващи се ходове на героя и противника,
-	/// докато потребителя не въведе n (no).
-	/// Първо е ходът на героя, после на противника.
-	/// През своя ход героят може да атакува, да се мести или нищо да не прави.
-	/// Ходът на противника е реализиран с изкуствен интелект.
+	/// GameMenu РїСЂРµРґСЃС‚Р°РІР»СЏРІР° Р±РµР·РєСЂР°РµРЅ С†РёРєСЉР» РЅР° СЂРµРґСѓРІР°С‰Рё СЃРµ С…РѕРґРѕРІРµ РЅР° РіРµСЂРѕСЏ Рё РїСЂРѕС‚РёРІРЅРёРєР°,
+	/// РґРѕРєР°С‚Рѕ РїРѕС‚СЂРµР±РёС‚РµР»СЏ РЅРµ РІСЉРІРµРґРµ n (no).
+	/// РџСЉСЂРІРѕ Рµ С…РѕРґСЉС‚ РЅР° РіРµСЂРѕСЏ, РїРѕСЃР»Рµ РЅР° РїСЂРѕС‚РёРІРЅРёРєР°.
+	/// РџСЂРµР· СЃРІРѕСЏ С…РѕРґ РіРµСЂРѕСЏС‚ РјРѕР¶Рµ РґР° Р°С‚Р°РєСѓРІР°, РґР° СЃРµ РјРµСЃС‚Рё РёР»Рё РЅРёС‰Рѕ РґР° РЅРµ РїСЂР°РІРё.
+	/// РҐРѕРґСЉС‚ РЅР° РїСЂРѕС‚РёРІРЅРёРєР° Рµ СЂРµР°Р»РёР·РёСЂР°РЅ СЃ РёР·РєСѓСЃС‚РІРµРЅ РёРЅС‚РµР»РµРєС‚.
 
 	while (true)
 	{
 		cout << "GAME MENU" << endl;
 		cout << "Continue? y/n";
 
-		/// Проверка дали потребителят продължава игра.
+		/// РџСЂРѕРІРµСЂРєР° РґР°Р»Рё РїРѕС‚СЂРµР±РёС‚РµР»СЏС‚ РїСЂРѕРґСЉР»Р¶Р°РІР° РёРіСЂР°.
 		string userInput;
 		vector<string> input;
 		getline(cin, userInput);
 		input = this->splitUserInput(userInput);
 
-		/// Ако потребителят се откаже, цикълът се прекратява.
+		/// РђРєРѕ РїРѕС‚СЂРµР±РёС‚РµР»СЏС‚ СЃРµ РѕС‚РєР°Р¶Рµ, С†РёРєСЉР»СЉС‚ СЃРµ РїСЂРµРєСЂР°С‚СЏРІР°.
 		if (input.at(0) == "n")
 		{
 			return;
 		}
 		else
 		{
-			///Играта продължава с 2 хода: на героя и противника.
+			///РРіСЂР°С‚Р° РїСЂРѕРґСЉР»Р¶Р°РІР° СЃ 2 С…РѕРґР°: РЅР° РіРµСЂРѕСЏ Рё РїСЂРѕС‚РёРІРЅРёРєР°.
 			this->PlayersTurn();
 			this->EnemysTurn();
-			/// Проверява за загинали същества и ги изтрива от полето.
+			/// РџСЂРѕРІРµСЂСЏРІР° Р·Р° Р·Р°РіРёРЅР°Р»Рё СЃСЉС‰РµСЃС‚РІР° Рё РіРё РёР·С‚СЂРёРІР° РѕС‚ РїРѕР»РµС‚Рѕ.
 			this->DeleteDead();
-			/// Проверява дали е загинал някой от играчите.
+			/// РџСЂРѕРІРµСЂСЏРІР° РґР°Р»Рё Рµ Р·Р°РіРёРЅР°Р» РЅСЏРєРѕР№ РѕС‚ РёРіСЂР°С‡РёС‚Рµ.
 			Player* died = this->CheckSomebodyDied();
 			if (died)
 			{
@@ -134,7 +134,7 @@ void Game::gameMenu()
 		}
 	}
 }
-//// Меню, чрез което потребителят може да си закупува стоки.
+//// РњРµРЅСЋ, С‡СЂРµР· РєРѕРµС‚Рѕ РїРѕС‚СЂРµР±РёС‚РµР»СЏС‚ РјРѕР¶Рµ РґР° СЃРё Р·Р°РєСѓРїСѓРІР° СЃС‚РѕРєРё.
 void Game::shopMenu()
 {
 	cout << "SHOP MENU" << endl;
@@ -179,7 +179,7 @@ void Game::shopMenu()
 	}
 }
 
-///Обработва входа на потребителя.
+///РћР±СЂР°Р±РѕС‚РІР° РІС…РѕРґР° РЅР° РїРѕС‚СЂРµР±РёС‚РµР»СЏ.
 vector<string> Game::splitUserInput(const string& s)
 {
 	stringstream ss(s);
@@ -191,13 +191,13 @@ vector<string> Game::splitUserInput(const string& s)
 	return tokens;
 }
 
-/// Engine: дава начало на всичко.
+/// Engine: РґР°РІР° РЅР°С‡Р°Р»Рѕ РЅР° РІСЃРёС‡РєРѕ.
 void Game::Run()
 {
 	this->mainMenu();
 }
 
-/// Реализира логиката на закупуването, според входните данни.
+/// Р РµР°Р»РёР·РёСЂР° Р»РѕРіРёРєР°С‚Р° РЅР° Р·Р°РєСѓРїСѓРІР°РЅРµС‚Рѕ, СЃРїРѕСЂРµРґ РІС…РѕРґРЅРёС‚Рµ РґР°РЅРЅРё.
 void Game::MakeBuyLogic(string userInput, int numberOfCreaturesWanted)
 {
 	int creatureValue = (this->getShop()->getItems())[userInput];
@@ -216,7 +216,7 @@ void Game::MakeBuyLogic(string userInput, int numberOfCreaturesWanted)
 	}
 }
 
-/// Принтира стоките в магазина.
+/// РџСЂРёРЅС‚РёСЂР° СЃС‚РѕРєРёС‚Рµ РІ РјР°РіР°Р·РёРЅР°.
 void Game::PrintItems()
 {
 	cout << "Peasant: " << this->getShop()->getItems()["Peasant"] << " gold" << endl
@@ -225,7 +225,7 @@ void Game::PrintItems()
 		<< "Griffon: " << this->getShop()->getItems()["Griffon"] << " gold" << endl;
 }
 
-/// Реализира логиката на хода.
+/// Р РµР°Р»РёР·РёСЂР° Р»РѕРіРёРєР°С‚Р° РЅР° С…РѕРґР°.
 void Game::MakeMoveLogic(vector<string> input)
 {
 
@@ -247,7 +247,7 @@ void Game::MakeMoveLogic(vector<string> input)
 	map<char, int> PtypeCreatures = { { PPeasantChar, 0 }, { PFootmanChar, 1 }, { PArcherChar, 2 }, { PGriffonChar, 3 } };
 	char position = this->m_battlefield->getBattlefield(source_x, source_y);
 
-	/// Проверяваме дали дадените координати са на същества на героя.
+	/// РџСЂРѕРІРµСЂСЏРІР°РјРµ РґР°Р»Рё РґР°РґРµРЅРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Рё СЃР° РЅР° СЃСЉС‰РµСЃС‚РІР° РЅР° РіРµСЂРѕСЏ.
 	if (PtypeCreatures.find(position) == PtypeCreatures.end()) {
 		cout << "You have no creatures on this field! You cant move them"<< endl;
 		return;
@@ -277,38 +277,38 @@ void Game::MakeMoveLogic(vector<string> input)
 	this->m_battlefield->printBattlefield();
 }
 
-///Реализира логиката на атаката.
-/// параметри:
-/// - атакуващ играч
-/// - атакуван играч
-/// - съществата, които са атакуващи
-/// - съществата, които са атакувани
+///Р РµР°Р»РёР·РёСЂР° Р»РѕРіРёРєР°С‚Р° РЅР° Р°С‚Р°РєР°С‚Р°.
+/// РїР°СЂР°РјРµС‚СЂРё:
+/// - Р°С‚Р°РєСѓРІР°С‰ РёРіСЂР°С‡
+/// - Р°С‚Р°РєСѓРІР°РЅ РёРіСЂР°С‡
+/// - СЃСЉС‰РµСЃС‚РІР°С‚Р°, РєРѕРёС‚Рѕ СЃР° Р°С‚Р°РєСѓРІР°С‰Рё
+/// - СЃСЉС‰РµСЃС‚РІР°С‚Р°, РєРѕРёС‚Рѕ СЃР° Р°С‚Р°РєСѓРІР°РЅРё
 
-/// Реализира логиката на атаката.
-/// Трябва му атакуващ играч, атакуван играч, с какви същества се атакува и какви същества се атакува.
+/// Р РµР°Р»РёР·РёСЂР° Р»РѕРіРёРєР°С‚Р° РЅР° Р°С‚Р°РєР°С‚Р°.
+/// РўСЂСЏР±РІР° РјСѓ Р°С‚Р°РєСѓРІР°С‰ РёРіСЂР°С‡, Р°С‚Р°РєСѓРІР°РЅ РёРіСЂР°С‡, СЃ РєР°РєРІРё СЃСЉС‰РµСЃС‚РІР° СЃРµ Р°С‚Р°РєСѓРІР° Рё РєР°РєРІРё СЃСЉС‰РµСЃС‚РІР° СЃРµ Р°С‚Р°РєСѓРІР°.
 void Game::MakeAttackLogic(Player* attackingPlayer, short typeCreatureAttacking, Player* attackedPlayer, short typeCreatureAttacked)
 {	
 	map<int, string> names = { { 0, "Peasants" }, { 1, "Footmen" }, { 2, "Archers" }, { 3, "Griffons" }, };
-	/// Сумарно атака на съществата
+	/// РЎСѓРјР°СЂРЅРѕ Р°С‚Р°РєР° РЅР° СЃСЉС‰РµСЃС‚РІР°С‚Р°
 	int summ_attack = 0;
 	vector<Creature*> attackingCreatures = (attackingPlayer->getCreaturesPossesed())[typeCreatureAttacking];
 	vector<Creature*> attackedCreatures = (attackedPlayer->getCreaturesPossesed())[typeCreatureAttacked];
 
 	for (size_t i = 0; i < attackingCreatures.size(); i++)
 	{
-		///Всяко от съществата във вектора атакува.
-		///Различните могат да притежават различна мана -> различна атака.
+		///Р’СЃСЏРєРѕ РѕС‚ СЃСЉС‰РµСЃС‚РІР°С‚Р° РІСЉРІ РІРµРєС‚РѕСЂР° Р°С‚Р°РєСѓРІР°.
+		///Р Р°Р·Р»РёС‡РЅРёС‚Рµ РјРѕРіР°С‚ РґР° РїСЂРёС‚РµР¶Р°РІР°С‚ СЂР°Р·Р»РёС‡РЅР° РјР°РЅР° -> СЂР°Р·Р»РёС‡РЅР° Р°С‚Р°РєР°.
 		summ_attack += attackingCreatures[i]->Attack();
 	}
-	/// колко ще бъдат убити.
+	/// РєРѕР»РєРѕ С‰Рµ Р±СЉРґР°С‚ СѓР±РёС‚Рё.
 	int killed = summ_attack / attackedCreatures[0]->getDefense();
-	/// премахваме убитите.
+	/// РїСЂРµРјР°С…РІР°РјРµ СѓР±РёС‚РёС‚Рµ.
 	killed = attackedPlayer->RemoveCreature(killed, typeCreatureAttacked);
 	cout << attackingPlayer->GetName() << " killed " << killed << " " << names[typeCreatureAttacked] << endl;
 
 }
 
-/// Цялата атака, в зависимост от входните данни.
+/// Р¦СЏР»Р°С‚Р° Р°С‚Р°РєР°, РІ Р·Р°РІРёСЃРёРјРѕСЃС‚ РѕС‚ РІС…РѕРґРЅРёС‚Рµ РґР°РЅРЅРё.
 void Game::MakeWholeAttack(vector<string> input)
 {
 	int source_x = atoi(input.at(1).c_str());
@@ -325,43 +325,43 @@ void Game::MakeWholeAttack(vector<string> input)
 	{
 		cout << "Invalid coords!" << endl;
 	}
-	///map от char и int.
-	///и за destinantion-a така
+	///map РѕС‚ char Рё int.
+	///Рё Р·Р° destinantion-a С‚Р°РєР°
 	char position = this->m_battlefield->getBattlefield(source_x, source_y);
 	char destination = this->m_battlefield->getBattlefield(dest_x, dest_y);
 
 	map<char, int> PtypeCreatures = { { PPeasantChar, 0 }, { PFootmanChar, 1 }, { PArcherChar, 2 }, { PGriffonChar, 3 } };
 	map<char, int> EtypeCreatures = { { EPeasantChar, 0 }, { EFootmanChar, 1 }, { EArcherChar, 2 }, { EGriffonChar, 3 } };
 
-	/// Проверяваме дали дадените координати са на същества на героя.
+	/// РџСЂРѕРІРµСЂСЏРІР°РјРµ РґР°Р»Рё РґР°РґРµРЅРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Рё СЃР° РЅР° СЃСЉС‰РµСЃС‚РІР° РЅР° РіРµСЂРѕСЏ.
 	if (PtypeCreatures.find(position) == PtypeCreatures.end()) {
 		cout << "You have no creatures on this field!";
 	}
-	/// Проверяваме дали атакуваните координати са на същества на противника.
+	/// РџСЂРѕРІРµСЂСЏРІР°РјРµ РґР°Р»Рё Р°С‚Р°РєСѓРІР°РЅРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Рё СЃР° РЅР° СЃСЉС‰РµСЃС‚РІР° РЅР° РїСЂРѕС‚РёРІРЅРёРєР°.
 	else if (EtypeCreatures.find(destination) == EtypeCreatures.end()){
 		cout << position;
 		cout << "There is no enemy!";
 	}
 
-	/// Ако стамината не е повече от разстоянието между атакуващите и атакуваните, можем само да се преместим, не можем да атакуваме.
+	/// РђРєРѕ СЃС‚Р°РјРёРЅР°С‚Р° РЅРµ Рµ РїРѕРІРµС‡Рµ РѕС‚ СЂР°Р·СЃС‚РѕСЏРЅРёРµС‚Рѕ РјРµР¶РґСѓ Р°С‚Р°РєСѓРІР°С‰РёС‚Рµ Рё Р°С‚Р°РєСѓРІР°РЅРёС‚Рµ, РјРѕР¶РµРј СЃР°РјРѕ РґР° СЃРµ РїСЂРµРјРµСЃС‚РёРј, РЅРµ РјРѕР¶РµРј РґР° Р°С‚Р°РєСѓРІР°РјРµ.
 	else if (CalculateDistance(playerCoords, enemyCoords) > m_player->getCreaturesPossesed()[PtypeCreatures[position]].at(0)->getStamina())
 	{
 		Creature* creature = m_player->getCreaturesPossesed()[PtypeCreatures[position]].at(0);
 		int m = creature->Move(source_x, source_y, dest_x, dest_y)[0];
 		int n = creature->Move(source_x, source_y, dest_x, dest_y)[1];
-		/// Променяме координатите на съществата.
+		/// РџСЂРѕРјРµРЅСЏРјРµ РєРѕРѕСЂРґРёРЅР°С‚РёС‚Рµ РЅР° СЃСЉС‰РµСЃС‚РІР°С‚Р°.
 		this->m_battlefield->setCreatureCoords(m, n, position);
 		cout << "You have moved to: " << m << ", " << n << endl;
 	}
-	/// Ако всичко е точно, атакуваме.
+	/// РђРєРѕ РІСЃРёС‡РєРѕ Рµ С‚РѕС‡РЅРѕ, Р°С‚Р°РєСѓРІР°РјРµ.
 	else {
 		this->MakeAttackLogic(m_player, PtypeCreatures[position], m_enemy, EtypeCreatures[destination]);
 	}
-	/// Принтира игралното поле.
+	/// РџСЂРёРЅС‚РёСЂР° РёРіСЂР°Р»РЅРѕС‚Рѕ РїРѕР»Рµ.
 	this->m_battlefield->printBattlefield();
 }
 
-///Един цял ход на главния ни герой.
+///Р•РґРёРЅ С†СЏР» С…РѕРґ РЅР° РіР»Р°РІРЅРёСЏ РЅРё РіРµСЂРѕР№.
 void Game::PlayersTurn(){
 	cout << "It is YOUR turn!" << endl;
 	cout << "Make your choice:" << endl
@@ -399,16 +399,16 @@ void Game::PlayersTurn(){
 	cout << "Finished Player's turn!" << endl;
 }
 
-/// Съдържа реализацията на хода на противника.
-/// атакува играча или се мести спрямо играча.
+/// РЎСЉРґСЉСЂР¶Р° СЂРµР°Р»РёР·Р°С†РёСЏС‚Р° РЅР° С…РѕРґР° РЅР° РїСЂРѕС‚РёРІРЅРёРєР°.
+/// Р°С‚Р°РєСѓРІР° РёРіСЂР°С‡Р° РёР»Рё СЃРµ РјРµСЃС‚Рё СЃРїСЂСЏРјРѕ РёРіСЂР°С‡Р°.
 void Game::EnemysTurn(){
 	srand(time(nullptr));
-	/// Индексът, който ще определи, с какво ще атакува противникът, е с rand()
+	/// РРЅРґРµРєСЃСЉС‚, РєРѕР№С‚Рѕ С‰Рµ РѕРїСЂРµРґРµР»Рё, СЃ РєР°РєРІРѕ С‰Рµ Р°С‚Р°РєСѓРІР° РїСЂРѕС‚РёРІРЅРёРєСЉС‚, Рµ СЃ rand()
 	int index = rand() % m_enemy->getCreaturesPossesed().size();
 
-	/// Вектор от създанията, с които ще атакува противникът, избрани на случаен принцип.
+	/// Р’РµРєС‚РѕСЂ РѕС‚ СЃСЉР·РґР°РЅРёСЏС‚Р°, СЃ РєРѕРёС‚Рѕ С‰Рµ Р°С‚Р°РєСѓРІР° РїСЂРѕС‚РёРІРЅРёРєСЉС‚, РёР·Р±СЂР°РЅРё РЅР° СЃР»СѓС‡Р°РµРЅ РїСЂРёРЅС†РёРї.
 	auto enemyCreatures = m_enemy->getCreaturesPossesed()[index];
-	/// Ако избраните същества ги няма (нула на брой са), избира пак, докато не попадне на съществуващи.
+	/// РђРєРѕ РёР·Р±СЂР°РЅРёС‚Рµ СЃСЉС‰РµСЃС‚РІР° РіРё РЅСЏРјР° (РЅСѓР»Р° РЅР° Р±СЂРѕР№ СЃР°), РёР·Р±РёСЂР° РїР°Рє, РґРѕРєР°С‚Рѕ РЅРµ РїРѕРїР°РґРЅРµ РЅР° СЃСЉС‰РµСЃС‚РІСѓРІР°С‰Рё.
 	while (m_enemy->getCreaturesPossesed()[index].size() == 0)
 	{
 		index = rand() % m_enemy->getCreaturesPossesed().size();
@@ -422,21 +422,21 @@ void Game::EnemysTurn(){
 		case 2: enemyCreaturesCoords = m_battlefield->getEnemyArcherCoords(); break;
 		case 3: enemyCreaturesCoords = m_battlefield->getEnemyGriffonCoords(); break;
 	}
-	/// Координати на съществата на героя.
+	/// РљРѕРѕСЂРґРёРЅР°С‚Рё РЅР° СЃСЉС‰РµСЃС‚РІР°С‚Р° РЅР° РіРµСЂРѕСЏ.
 	vector<int*> coords = { m_battlefield->getPlayerPeasantCoords(),
 		m_battlefield->getPlayerFootmanCoords(),
 		m_battlefield->getPlayerArcherCoords(),
 		m_battlefield->getPlayerGriffonCoords() };
 
-	/// Намираме кои създания са най-близо до тези, с които ще атакува противникът.
+	/// РќР°РјРёСЂР°РјРµ РєРѕРё СЃСЉР·РґР°РЅРёСЏ СЃР° РЅР°Р№-Р±Р»РёР·Рѕ РґРѕ С‚РµР·Рё, СЃ РєРѕРёС‚Рѕ С‰Рµ Р°С‚Р°РєСѓРІР° РїСЂРѕС‚РёРІРЅРёРєСЉС‚.
 	int indexClosest = this->WhichIsClosest(enemyCreaturesCoords,
 											coords[0],
 											coords[1],
 											coords[2],
 											coords[3]);
 
-	///Проверява дали е достатъчно близко, ако е в близост стамината на съществото -> атакува.
-	/// Ако не е, мести се.
+	///РџСЂРѕРІРµСЂСЏРІР° РґР°Р»Рё Рµ РґРѕСЃС‚Р°С‚СЉС‡РЅРѕ Р±Р»РёР·РєРѕ, Р°РєРѕ Рµ РІ Р±Р»РёР·РѕСЃС‚ СЃС‚Р°РјРёРЅР°С‚Р° РЅР° СЃСЉС‰РµСЃС‚РІРѕС‚Рѕ -> Р°С‚Р°РєСѓРІР°.
+	/// РђРєРѕ РЅРµ Рµ, РјРµСЃС‚Рё СЃРµ.
 	if (CalculateDistance(coords[indexClosest], enemyCreaturesCoords) > enemyCreatures.front()->getStamina())
 	{
 		Creature* creature = enemyCreatures.at(0);
@@ -450,14 +450,14 @@ void Game::EnemysTurn(){
 							   coords[indexClosest][0],
 							   coords[indexClosest][1])[1];
 
-		/// Променяме координатите на съществата.
+		/// РџСЂРѕРјРµРЅСЏРјРµ РєРѕРѕСЂРґРёРЅР°С‚РёС‚Рµ РЅР° СЃСЉС‰РµСЃС‚РІР°С‚Р°.
 		map<int, char> EtypeCreatures = { { 0, EPeasantChar }, { 1, EFootmanChar }, { 2, EArcherChar }, { 3, EGriffonChar} };
 
 		this->m_battlefield->setCreatureCoords(m, n, EtypeCreatures[index]);
 		cout << "Enemy has moved to: " << m << ", " << n << endl;
 	}
 	else {
-		/// Ако сме достатъчно близо, противникът атакува.
+		/// РђРєРѕ СЃРјРµ РґРѕСЃС‚Р°С‚СЉС‡РЅРѕ Р±Р»РёР·Рѕ, РїСЂРѕС‚РёРІРЅРёРєСЉС‚ Р°С‚Р°РєСѓРІР°.
 		this->MakeAttackLogic(m_enemy, index, m_player, indexClosest);
 	}
 	this->m_battlefield->printBattlefield();
@@ -465,7 +465,7 @@ void Game::EnemysTurn(){
 
 }
 
-/// Проверява кои същества са най-близо до дадени координати
+/// РџСЂРѕРІРµСЂСЏРІР° РєРѕРё СЃСЉС‰РµСЃС‚РІР° СЃР° РЅР°Р№-Р±Р»РёР·Рѕ РґРѕ РґР°РґРµРЅРё РєРѕРѕСЂРґРёРЅР°С‚Рё
 int Game::WhichIsClosest(int* initialCoords, int* peasants, int* footmen, int* archers, int* griffons)
 {
 	
@@ -486,35 +486,35 @@ int Game::WhichIsClosest(int* initialCoords, int* peasants, int* footmen, int* a
 			index = it->first;
 		}
 	}
-	/// Връща индекса на най-близките същества.
+	/// Р’СЂСЉС‰Р° РёРЅРґРµРєСЃР° РЅР° РЅР°Р№-Р±Р»РёР·РєРёС‚Рµ СЃСЉС‰РµСЃС‚РІР°.
 	return index;
 }
 
-/// Смята разстояние между две точки с помощта на координатите им.
+/// РЎРјСЏС‚Р° СЂР°Р·СЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РґРІРµ С‚РѕС‡РєРё СЃ РїРѕРјРѕС‰С‚Р° РЅР° РєРѕРѕСЂРґРёРЅР°С‚РёС‚Рµ РёРј.
 int Game::CalculateDistance(int* coords1, int* coords2)
 {
-	/// Проверяваме дали дадените координати са извън полето - т.е.
-	/// координатите на съществата са -1 -1, защото са убити :D
+	/// РџСЂРѕРІРµСЂСЏРІР°РјРµ РґР°Р»Рё РґР°РґРµРЅРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Рё СЃР° РёР·РІСЉРЅ РїРѕР»РµС‚Рѕ - С‚.Рµ.
+	/// РєРѕРѕСЂРґРёРЅР°С‚РёС‚Рµ РЅР° СЃСЉС‰РµСЃС‚РІР°С‚Р° СЃР° -1 -1, Р·Р°С‰РѕС‚Рѕ СЃР° СѓР±РёС‚Рё :D
 	if (coords1 < 0 || coords2 < 0)
 	{
-		/// Ако са - разстоянието до тях е максимално.
+		/// РђРєРѕ СЃР° - СЂР°Р·СЃС‚РѕСЏРЅРёРµС‚Рѕ РґРѕ С‚СЏС… Рµ РјР°РєСЃРёРјР°Р»РЅРѕ.
 		return std::numeric_limits<int>::max();
 	}
-	/// В противен случай просто смятаме разстоянието с питагорова теорема.
+	/// Р’ РїСЂРѕС‚РёРІРµРЅ СЃР»СѓС‡Р°Р№ РїСЂРѕСЃС‚Рѕ СЃРјСЏС‚Р°РјРµ СЂР°Р·СЃС‚РѕСЏРЅРёРµС‚Рѕ СЃ РїРёС‚Р°РіРѕСЂРѕРІР° С‚РµРѕСЂРµРјР°.
 	return int(sqrt((coords1[0] - coords2[0])*(coords1[0] - coords2[0])* +(coords1[1] - coords2[1])*(coords1[1] - coords2[1])));
 }
 
 
-/// Изтрива умрелите същества по полето :D
-/// Прави координатите им -1, -1, защото вече не съществуват.
-/// Изтрива ги и от картата.
+/// РР·С‚СЂРёРІР° СѓРјСЂРµР»РёС‚Рµ СЃСЉС‰РµСЃС‚РІР° РїРѕ РїРѕР»РµС‚Рѕ :D
+/// РџСЂР°РІРё РєРѕРѕСЂРґРёРЅР°С‚РёС‚Рµ РёРј -1, -1, Р·Р°С‰РѕС‚Рѕ РІРµС‡Рµ РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°С‚.
+/// РР·С‚СЂРёРІР° РіРё Рё РѕС‚ РєР°СЂС‚Р°С‚Р°.
 void Game::DeleteDead()
 {
 	vector<vector<Creature*>> playerCreatures = m_player->getCreaturesPossesed();
 	vector<vector<Creature*>> enemyCreatures = m_enemy->getCreaturesPossesed();
 
-	/// Обхожда съществата на героя и проверява дали има вектор, чиито елементи са 0 на брой.
-	/// В такъв случай тези същества се изтриват от картата.
+	/// РћР±С…РѕР¶РґР° СЃСЉС‰РµСЃС‚РІР°С‚Р° РЅР° РіРµСЂРѕСЏ Рё РїСЂРѕРІРµСЂСЏРІР° РґР°Р»Рё РёРјР° РІРµРєС‚РѕСЂ, С‡РёРёС‚Рѕ РµР»РµРјРµРЅС‚Рё СЃР° 0 РЅР° Р±СЂРѕР№.
+	/// Р’ С‚Р°РєСЉРІ СЃР»СѓС‡Р°Р№ С‚РµР·Рё СЃСЉС‰РµСЃС‚РІР° СЃРµ РёР·С‚СЂРёРІР°С‚ РѕС‚ РєР°СЂС‚Р°С‚Р°.
 	auto pd = playerCreatures.begin();
 	int counter = 0;
 
@@ -553,8 +553,8 @@ void Game::DeleteDead()
 		}
 		counter++;
 	}
-	/// Обхожда съществата на противника и проверява дали има вектор, чиито елементи са 0 на брой.
-	/// В такъв случай тези същества се изтриват от картата.
+	/// РћР±С…РѕР¶РґР° СЃСЉС‰РµСЃС‚РІР°С‚Р° РЅР° РїСЂРѕС‚РёРІРЅРёРєР° Рё РїСЂРѕРІРµСЂСЏРІР° РґР°Р»Рё РёРјР° РІРµРєС‚РѕСЂ, С‡РёРёС‚Рѕ РµР»РµРјРµРЅС‚Рё СЃР° 0 РЅР° Р±СЂРѕР№.
+	/// Р’ С‚Р°РєСЉРІ СЃР»СѓС‡Р°Р№ С‚РµР·Рё СЃСЉС‰РµСЃС‚РІР° СЃРµ РёР·С‚СЂРёРІР°С‚ РѕС‚ РєР°СЂС‚Р°С‚Р°.
 	pd = enemyCreatures.begin();
 	counter = 0;
 
@@ -596,10 +596,10 @@ void Game::DeleteDead()
 		
 }
 
-/// Връща кой е умрял... или nullptr
+/// Р’СЂСЉС‰Р° РєРѕР№ Рµ СѓРјСЂСЏР»... РёР»Рё nullptr
 Player* Game::CheckSomebodyDied()
 {
-	/// Ако има поне 1 същество, чиято бройка е разл от нула -> съответният играч е жив.
+	/// РђРєРѕ РёРјР° РїРѕРЅРµ 1 СЃСЉС‰РµСЃС‚РІРѕ, С‡РёСЏС‚Рѕ Р±СЂРѕР№РєР° Рµ СЂР°Р·Р» РѕС‚ РЅСѓР»Р° -> СЃСЉРѕС‚РІРµС‚РЅРёСЏС‚ РёРіСЂР°С‡ Рµ Р¶РёРІ.
 	vector<vector<Creature*>> playerCreatures = m_player->getCreaturesPossesed();
 	vector<vector<Creature*>> enemyCreatures = m_enemy->getCreaturesPossesed();
 	bool smbDied = true;
@@ -610,7 +610,7 @@ Player* Game::CheckSomebodyDied()
 			smbDied = false;
 		}
 	}
-	/// Ако smdDied не е станала false, значи Player e умрял
+	/// РђРєРѕ smdDied РЅРµ Рµ СЃС‚Р°РЅР°Р»Р° false, Р·РЅР°С‡Рё Player e СѓРјСЂСЏР»
 	if (smbDied)
 	{
 		return m_player;
@@ -623,20 +623,20 @@ Player* Game::CheckSomebodyDied()
 		}
 	}
 
-	/// Ако smdDied не е станала false, значи противникът e умрял
+	/// РђРєРѕ smdDied РЅРµ Рµ СЃС‚Р°РЅР°Р»Р° false, Р·РЅР°С‡Рё РїСЂРѕС‚РёРІРЅРёРєСЉС‚ e СѓРјСЂСЏР»
 	if (smbDied)
 	{
 		return m_enemy;
 	}
-	/// Значи никой не е умрял.
+	/// Р—РЅР°С‡Рё РЅРёРєРѕР№ РЅРµ Рµ СѓРјСЂСЏР».
 	else {
 		return nullptr;
 	}
 }
 
-///Работа с файлове!
+///Р Р°Р±РѕС‚Р° СЃ С„Р°Р№Р»РѕРІРµ!
 
-///Записва полето във файл.
+///Р—Р°РїРёСЃРІР° РїРѕР»РµС‚Рѕ РІСЉРІ С„Р°Р№Р».
 int Game::saveBattlefield()
 {
 	ofstream myfile("battlefield.txt");
@@ -656,7 +656,7 @@ int Game::saveBattlefield()
 	return 0;
 }
 
-///Записва състояния на съществата.
+///Р—Р°РїРёСЃРІР° СЃСЉСЃС‚РѕСЏРЅРёСЏ РЅР° СЃСЉС‰РµСЃС‚РІР°С‚Р°.
 int Game::saveCreatureStats()
 {
 	ofstream myfile("creature_stats.txt");
