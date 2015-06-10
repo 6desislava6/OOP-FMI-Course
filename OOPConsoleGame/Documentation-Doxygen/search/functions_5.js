@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['game',['Game',['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game']]],
+  ['gamemenu',['gameMenu',['../class_game.html#a30f9c9306006a0b1026cd5930ab33998',1,'Game']]],
+  ['getbattlefield',['getBattlefield',['../class_battlefield.html#a9601e982f8fea77e7623280386775b93',1,'Battlefield']]],
+  ['getcreaturespossesed',['getCreaturesPossesed',['../class_player.html#a7cfccdf9384f9163f93a5e2146361761',1,'Player']]],
+  ['getcritchance',['getCritChance',['../class_creature.html#a7f75d220c66a10397fa30ce75de7487d',1,'Creature']]],
+  ['getcurrentenemy',['getCurrentEnemy',['../class_game.html#a8ba5278b94e78e9260a2dc1d475cdffa',1,'Game']]],
+  ['getcurrentgold',['getCurrentGold',['../class_player.html#a495de41e91daa4a12dca6adf3b333915',1,'Player']]],
+  ['getcurrentplayer',['getCurrentPlayer',['../class_game.html#a9f0544f4d79d90649eeabbece1b07018',1,'Game']]],
+  ['getdamage',['getDamage',['../class_creature.html#a57d51aca891e3630e8cd98dd2424326f',1,'Creature']]],
+  ['getdefense',['getDefense',['../class_creature.html#a21e54c881cfe4b1ea2ffa8e8041a171b',1,'Creature']]],
+  ['getenemyarchercoords',['getEnemyArcherCoords',['../class_battlefield.html#acceac22a637490ac2a2a2d45c3175d15',1,'Battlefield']]],
+  ['getenemyfootmancoords',['getEnemyFootmanCoords',['../class_battlefield.html#afc52edcc8f2ad38f571e1a2837f90b06',1,'Battlefield']]],
+  ['getenemygriffoncoords',['getEnemyGriffonCoords',['../class_battlefield.html#aded556b6c7c63650a45af0ad05e1b8cb',1,'Battlefield']]],
+  ['getenemypeasantcoords',['getEnemyPeasantCoords',['../class_battlefield.html#a82d2dc4c44e59ec711f13de558b7196a',1,'Battlefield']]],
+  ['gethealth',['getHealth',['../class_creature.html#a574090a4e93defbe1755e873adb86d8d',1,'Creature']]],
+  ['getitems',['getItems',['../class_shop.html#a826f300aa604bfa7c1f1c430d3bcae47',1,'Shop']]],
+  ['getmana',['getMana',['../class_creature.html#a4f0480d364b459391ba598c50811f126',1,'Creature']]],
+  ['getname',['GetName',['../class_player.html#a973a7beb3854d9d187b59484cbcb6d5c',1,'Player']]],
+  ['getplayerarchercoords',['getPlayerArcherCoords',['../class_battlefield.html#a21d05693604f216ccb397864df97cdeb',1,'Battlefield']]],
+  ['getplayerfootmancoords',['getPlayerFootmanCoords',['../class_battlefield.html#a8be8ead941ba759678a3b5ef0541c79e',1,'Battlefield']]],
+  ['getplayergriffoncoords',['getPlayerGriffonCoords',['../class_battlefield.html#af9d60214c6efdc272c6a49cfc2b68d2a',1,'Battlefield']]],
+  ['getplayerpeasantcoords',['getPlayerPeasantCoords',['../class_battlefield.html#a3853f53d530ab5ebc44b550637e99359',1,'Battlefield']]],
+  ['getshop',['getShop',['../class_game.html#a362161a7a9169c47736f4adf3abf491f',1,'Game']]],
+  ['getstamina',['getStamina',['../class_creature.html#a19ac589830da30b9aec62ce0111deaee',1,'Creature']]],
+  ['griffon',['Griffon',['../class_griffon.html#adf97fff2ba8555a2f135e3f1645039be',1,'Griffon']]]
+];

@@ -1,0 +1,26 @@
+var class_battlefield =
+[
+    [ "Battlefield", "class_battlefield.html#af5ee36760425c10d8b979c6caa45c78a", null ],
+    [ "~Battlefield", "class_battlefield.html#a32f921cbc11d57fa0bcaedbe8c9bd67f", null ],
+    [ "deleteCreatures", "class_battlefield.html#aa4fd69fb8ac4351e1a21ab534d7d2515", null ],
+    [ "getBattlefield", "class_battlefield.html#a9601e982f8fea77e7623280386775b93", null ],
+    [ "getEnemyArcherCoords", "class_battlefield.html#acceac22a637490ac2a2a2d45c3175d15", null ],
+    [ "getEnemyFootmanCoords", "class_battlefield.html#afc52edcc8f2ad38f571e1a2837f90b06", null ],
+    [ "getEnemyGriffonCoords", "class_battlefield.html#aded556b6c7c63650a45af0ad05e1b8cb", null ],
+    [ "getEnemyPeasantCoords", "class_battlefield.html#a82d2dc4c44e59ec711f13de558b7196a", null ],
+    [ "getPlayerArcherCoords", "class_battlefield.html#a21d05693604f216ccb397864df97cdeb", null ],
+    [ "getPlayerFootmanCoords", "class_battlefield.html#a8be8ead941ba759678a3b5ef0541c79e", null ],
+    [ "getPlayerGriffonCoords", "class_battlefield.html#af9d60214c6efdc272c6a49cfc2b68d2a", null ],
+    [ "getPlayerPeasantCoords", "class_battlefield.html#a3853f53d530ab5ebc44b550637e99359", null ],
+    [ "printBattlefield", "class_battlefield.html#a7100b1751991acf4681f5bd6b73f0b2f", null ],
+    [ "setCreatureCoords", "class_battlefield.html#ad61afd8fd96ebea562e44f201f6ef98d", null ],
+    [ "setEnemyArcherCoords", "class_battlefield.html#af22e68ffd30f2016628bdf7e7ef3f17c", null ],
+    [ "setEnemyFootmanCoords", "class_battlefield.html#a2398435c5259039fa3e7f558a3e32d33", null ],
+    [ "setEnemyGriffonCoords", "class_battlefield.html#aa963c6080fa1b03c6e63e78271cf88eb", null ],
+    [ "setEnemyPeasantCoords", "class_battlefield.html#a05d8555602e41491db62497ac4b3aa6d", null ],
+    [ "setPlayerArcherCoords", "class_battlefield.html#a4a4feaedd321a161c70e702de059656b", null ],
+    [ "setPlayerFootmanCoords", "class_battlefield.html#aef29b07d91ea905b9d3c94e7fab267bc", null ],
+    [ "setPlayerGriffonCoords", "class_battlefield.html#a20f794572dd13ec8fcdab7efbcadcef0", null ],
+    [ "setPlayerPeasantCoords", "class_battlefield.html#a5b378b1a70f0bf6614d3e5f1a5e2eba1", null ],
+    [ "coords", "class_battlefield.html#a9160b9bfcf1e7e8fbd27767e50167cd9", null ]
+];
