@@ -113,7 +113,7 @@ int Player::RemoveCreature(int amount, short type)
 	for (size_t i = 0; i < amount; i++)
 	{
 		///Трием обекта, който е динамично заделен.
-		delete *pd;
+		delete *(pd + i);
 		/// Сега го махаме от вектора.
 	}
 	pd = this->creaturesPossesed[type].begin();

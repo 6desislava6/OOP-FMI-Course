@@ -49,11 +49,10 @@ Shop* Game::getShop() const
 void Game::mainMenu()
 {
 	string userInput;
-	cout << "You are in the MAIN MENU." << endl;
-	cout << "Make your choice:" << endl
-		<< "start -> start new game" << endl
-		<< "shop -> go to the shop" << endl
-		<< "exit -> exit the game" << endl;
+	cout << "MAIN MENU." << endl;
+	cout << "start" << endl
+		<< "shop" << endl
+		<< "exit" << endl;
 
 	while (cin)
 	{
@@ -304,6 +303,7 @@ void Game::MakeAttackLogic(Player* attackingPlayer, short typeCreatureAttacking,
 	int killed = summ_attack / attackedCreatures[0]->getDefense();
 	/// премахваме убитите.
 	killed = attackedPlayer->RemoveCreature(killed, typeCreatureAttacked);
+	this->DeleteDead();
 	cout << attackingPlayer->GetName() << " killed " << killed << " " << names[typeCreatureAttacked] << endl;
 
 }
@@ -412,8 +412,9 @@ void Game::EnemysTurn(){
 	while (m_enemy->getCreaturesPossesed()[index].size() == 0)
 	{
 		index = rand() % m_enemy->getCreaturesPossesed().size();
+		enemyCreatures = m_enemy->getCreaturesPossesed()[index];
 	}
-	
+
 	int* enemyCreaturesCoords = nullptr;
 	switch (index)
 	{
@@ -566,32 +567,32 @@ void Game::DeleteDead()
 			switch (counter)
 			{
 			case 0:
-				x = m_battlefield->getPlayerPeasantCoords()[0];
-				y = m_battlefield->getPlayerPeasantCoords()[1];
+				x = m_battlefield->getEnemyPeasantCoords()[0];
+				y = m_battlefield->getEnemyPeasantCoords()[1];
 				m_battlefield->setEnemyPeasantCoords(-1, -1);
 				break;
 
 			case 1:
-				x = m_battlefield->getPlayerFootmanCoords()[0];
-				y = m_battlefield->getPlayerFootmanCoords()[1];
+				x = m_battlefield->getEnemyFootmanCoords()[0];
+				y = m_battlefield->getEnemyFootmanCoords()[1];
 				m_battlefield->setEnemyFootmanCoords(-1, -1);
 				break;
 
 			case 2:
-				x = m_battlefield->getPlayerArcherCoords()[0];
-				y = m_battlefield->getPlayerArcherCoords()[1];
+				x = m_battlefield->getEnemyArcherCoords()[0];
+				y = m_battlefield->getEnemyArcherCoords()[1];
 				m_battlefield->setEnemyArcherCoords(-1, -1);
 				break;
 
 			case 3:
-				x = m_battlefield->getPlayerGriffonCoords()[0];
-				y = m_battlefield->getPlayerGriffonCoords()[1];
+				x = m_battlefield->getEnemyGriffonCoords()[0];
+				y = m_battlefield->getEnemyGriffonCoords()[1];
 				m_battlefield->setEnemyGriffonCoords(-1, -1);
 				break;
 			}
 			m_battlefield->deleteCreatures(x, y);
-			counter++;
 		}
+		counter++;
 	}
 		
 }
